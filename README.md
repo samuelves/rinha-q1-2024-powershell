@@ -1,5 +1,7 @@
-## Rinha Backend 2024Q1
-<img src="https://github.com/samuelves/rinha-q1-2024-powershell/blob/images/45456617.webp?raw=true" alt="meme" />
+## Rinha Backend  2024Q1
+
+<img src="https://raw.githubusercontent.com/samuelves/rinha-q1-2024-powershell/main/images/45456617.webp" alt="meme" />
+
 ### Tecnologias
 <div>
 	<table>
