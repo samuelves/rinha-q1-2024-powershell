@@ -3,6 +3,8 @@
 <img src="https://raw.githubusercontent.com/samuelves/rinha-q1-2024-powershell/main/images/45456617.webp" alt="meme" />
 
 ### Tecnologias
+
+
 <div>
 	<table>
 		<tr>
