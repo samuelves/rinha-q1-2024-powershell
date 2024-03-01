@@ -1,0 +1,48 @@
+version: "3.5"
+
+
+services:
+  api01: &api
+    hostname: api01
+    volumes:
+      - ./data:/app/data
+    networks:
+      - default
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      - MIGRATE=1
+      - PORT=8080
+    ports:
+      - "8080:8080"
+    deploy:
+      resources:
+        limits:
+          memory: "400MB"
+  api02:
+    <<: *api
+    hostname: api02
+    environment:
+      - PORT=8081
+    ports:
+      - "8081:8081"
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - api01
+      - api02
+    ports:
+      - "9999:9999"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: "150MB"
+
+networks:
+  default:
+    driver: bridge
+    name: rinha-network
